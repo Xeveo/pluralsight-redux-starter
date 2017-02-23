@@ -1,0 +1,78 @@
+@import 'colors';
+
+$height: 20px;
+$width: $height * 2.5;
+$togglerWidth: $width / 1.8;
+
+
+.toggler {
+  display: flex;
+  align-items: center;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $grey;
+  }
+
+  label {
+    flex: 1;
+  }
+
+  input[type=checkbox] {
+    -webkit-appearance: none;
+    position: relative;
+    margin: 3px;
+
+    &:focus {
+      outline: 0;
+    }
+
+    &:not(:disabled) {
+      cursor: pointer;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      display: inline-block;
+      border-radius: $height / 2;
+    }
+
+    &::before {
+      background-color: $white;
+      height: $height;
+      width: $width;
+      border: 1px solid $grey;
+    }
+
+    &::after {
+      content: attr(data-text-off);
+      font-size: 11px;
+      height: $height - 4;
+      line-height: $height - 4;
+      width: $togglerWidth;
+      top: 2px;
+      left: 2px;
+      position: absolute;
+      transition: left 0.1s ease-out;
+      background-color: darken($grey, 25);
+      text-align: center;
+      color: $white;
+    }
+
+    &:checked::after {
+      content: attr(data-text-on);
+      left: $width - $togglerWidth - 2;
+      background-color: $primary-accent;
+    }
+
+    &:disabled {
+      &::after {
+        background-color: $grey;
+      }
+
+      &:checked::after {
+        background-color: $primary-accent-disabled;
+      }
+    }
+  }
+}

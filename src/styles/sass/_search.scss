@@ -1,0 +1,79 @@
+@import 'colors';
+@import 'font';
+
+$radius: 4px;
+$width: 250px;
+$height: 32px;
+$icon-width: $height;
+
+.search-form {
+  background-color: $white;
+  border-radius: $radius;
+  width: $width;
+  height: $height;
+  box-shadow: 2px 2px 4px -2px rgba(0, 0, 0, 0.5);
+
+  display: flex;
+
+  input {
+    position: relative;
+    left: $icon-width + 1;
+    flex: 1 1 0;
+
+    border: 0;
+    border-radius: $radius;
+
+    padding: 0.5em 1em;
+    z-index: 1;
+
+    transition: left 0.3s ease-out;
+
+    &:focus {
+      outline: 0;
+    }
+
+    &.active {
+      left: 0;
+    }
+  }
+
+  &:before {
+    position: absolute;
+    color: $background;
+  }
+
+  button, & {
+    &:before {
+      font-family: 'icomoonapp1' !important;
+      content: "\e607";
+    }
+  }
+
+  button, &:before {
+    padding: 0.5em;
+    z-index: 0;
+    font-size: 1em;
+    width: $icon-width;
+  }
+
+  button {
+    position: relative;
+    left: 1px;
+    border: 0;
+    color: $white;
+    background-color: $primary-accent;
+    border-radius: 0 $radius $radius 0;
+
+    &:not(:disabled) {
+      cursor: pointer;
+    }
+
+    &:disabled {
+      background-color: $grey;
+    }
+
+    &:focus {
+      outline: 0;
+    }
+  }
+}
