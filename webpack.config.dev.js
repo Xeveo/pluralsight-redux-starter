@@ -6,10 +6,12 @@ export default {
   entry: [
     'eventsource-polyfill', // necessary for hot reloading with IE
     'webpack-hot-middleware/client?reload=true', //note that it reloads the page if hot module reloading fails.
-    path.resolve(__dirname, 'src/index'),
+    path.resolve(__dirname, 'src/styles/sass/index.scss'),
+    path.resolve(__dirname, 'src/scripts/app.js'),
   ],
   target: 'web',
   output: {
+    library: 'Sandbox',
     path: __dirname + '/dist', // Note: Physical files are only output by the production build task `npm run build`.
     publicPath: '/',
     filename: 'bundle.js',
