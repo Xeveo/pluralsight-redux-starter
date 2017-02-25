@@ -1,8 +1,11 @@
 @import 'colors';
+@import 'fragments';
+@import 'variables';
 
 .card {
   background-color: darken($white, 2);
-  box-shadow: 2px 2px 4px -2px rgba(0, 0, 0, 0.5);
+  box-shadow: $box-shadow;
   padding: 8px;
   margin: 8px 0;
+  border-radius: $border-radius;
 }

@@ -1,17 +1,17 @@
 @import 'colors';
 @import 'font';
+@import 'variables';
 
-$radius: 4px;
 $width: 250px;
 $height: 32px;
 $icon-width: $height;
 
 .search-form {
   background-color: $white;
-  border-radius: $radius;
+  border-radius: $border-radius;
   width: $width;
   height: $height;
-  box-shadow: 2px 2px 4px -2px rgba(0, 0, 0, 0.5);
+  box-shadow: $box-shadow;
 
   display: flex;
 
@@ -21,7 +21,7 @@ $icon-width: $height;
     flex: 1 1 0;
 
     border: 0;
-    border-radius: $radius;
+    border-radius: $border-radius;
 
     padding: 0.5em 1em;
     z-index: 1;
@@ -62,7 +62,7 @@ $icon-width: $height;
     border: 0;
     color: $white;
     background-color: $primary-accent;
-    border-radius: 0 $radius $radius 0;
+    border-radius: 0 $border-radius $border-radius 0;
 
     &:not(:disabled) {
       cursor: pointer;

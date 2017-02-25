@@ -1,7 +1,8 @@
-$background: #2081AA;
+$background: #EDEDED;
 $white: #FEFEFE;
 $grey: #BEBBB8;
 $text-color: #333333;
+$primary: #2081AA;
 
-$primary-accent: darken($background, 15);
-$primary-accent-disabled: desaturate(lighten($background, 15), 35);
+$primary-accent: darken($primary, 15);
+$primary-accent-disabled: desaturate(lighten($primary, 15), 35);
